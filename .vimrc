@@ -1,6 +1,14 @@
-set nocompatible
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kristijanhusak/vim-hybrid-material'
+call plug#end()
+
+filetype plugin indent on
 
 set clipboard=unnamedplus
+filetype off
+set nocompatible
 
 set number
 
@@ -31,17 +39,17 @@ set autoread
 set showcmd
 
 set expandtab
-
 set tabstop=4
-
 set shiftwidth=4
+set softtabstop=4
 
+set foldmethod=indent
+set foldlevel=79
 set cursorline
-
-
-filetype off
-
-
+if &t_Co > 2 || has("gui_running")
+    syntax on
+    set hlsearch
+endif
 nnoremap <space> za
 
 nnoremap <C-S-L> :bn<cr>
@@ -57,18 +65,6 @@ nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-tab> <gv
 
-if &t_Co > 2 || has("gui_running")
-    syntax on
-    set hlsearch
-endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'kristijanhusak/vim-hybrid-material'
-call plug#end()
-
-
 " colorscheme Tomorrow-Night 
 
 colorscheme space-vim-dark
@@ -80,5 +76,4 @@ hi Comment guifg=#5C6370 ctermfg=59
 let g:airline#extensions#tabline#enabled = 1 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
-
-filetype plugin indent on
+let g:SimpylFold_docstring_preview=1
