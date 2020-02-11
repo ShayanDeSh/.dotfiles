@@ -8,7 +8,6 @@ set ruler
 set splitbelow
 set splitright
 set encoding=utf-8
-set mouse=a
 set nocompatible
 set noswapfile
 filetype off
@@ -19,7 +18,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-S-L> :bn<cr>
-nnoremap <C-S-K> :bp<cr>
+noremap <C-S-K> :bp<cr>
+nnoremap j h
+nnoremap k j
+nnoremap l k
+nnoremap ; l
+nnoremap h ;
+vnoremap j h
+vnoremap k j
+vnoremap l k
+vnoremap ; l
+vnoremap h ;
 if &t_Co > 2 || has("gui_running")
 	syntax on
 		set hlsearch
