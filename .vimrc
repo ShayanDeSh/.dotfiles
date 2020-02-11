@@ -3,13 +3,20 @@ set incsearch
 set backspace=indent,eol,start
 set autoindent
 set history=50
-set showcmd
 set ruler
 set splitbelow
 set splitright
 set encoding=utf-8
 set nocompatible
 set noswapfile
+set textwidth=80
+set wrap
+set autoread
+set showcmd
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set cursorline
 filetype off
 colorscheme elflord 
 nnoremap <space> za
@@ -18,7 +25,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-S-L> :bn<cr>
-noremap <C-S-K> :bp<cr>
+nnoremap <C-S-K> :bp<cr>
+nnoremap <C-H> :nohlsearch<cr>
 nnoremap j h
 nnoremap k j
 nnoremap l k
@@ -30,8 +38,8 @@ vnoremap l k
 vnoremap ; l
 vnoremap h ;
 if &t_Co > 2 || has("gui_running")
-	syntax on
-		set hlsearch
+    syntax on
+    set hlsearch
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
