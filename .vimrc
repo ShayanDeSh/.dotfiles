@@ -38,11 +38,9 @@ set shiftwidth=4
 
 set cursorline
 
-highlight CursorLineNr ctermbg=0 ctermfg=6
 
 filetype off
 
-colorscheme elflord
 
 nnoremap <space> za
 
@@ -67,13 +65,20 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
+
+" colorscheme Tomorrow-Night 
+
+colorscheme space-vim-dark
+let g:space_vim_dark_background = 233
+color space-vim-dark
+hi LineNr ctermbg=NONE guibg=NONE
+hi Comment guifg=#5C6370 ctermfg=59
+
+let g:airline#extensions#tabline#enabled = 1 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 
 filetype plugin indent on
-
-
