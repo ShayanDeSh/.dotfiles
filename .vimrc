@@ -2,12 +2,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 filetype plugin indent on
 
 set clipboard=unnamedplus
+
 filetype off
+
 set nocompatible
 
 set number
@@ -46,6 +50,7 @@ set softtabstop=4
 set foldmethod=indent
 set foldlevel=79
 set cursorline
+
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
@@ -54,6 +59,8 @@ nnoremap <space> za
 
 nnoremap <C-S-L> :bn<cr>
 nnoremap <C-S-K> :bp<cr>
+
+nnoremap <cr> o<Esc>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
