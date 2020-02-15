@@ -16,6 +16,8 @@ let mapleader = ","
 
 set nocompatible
 
+set wildmenu
+
 set number
 
 set incsearch
@@ -62,7 +64,8 @@ nnoremap <space> za
 map <leader>k :bn<cr>
 map <leader>j :bp<cr>
 map <leader>d :bd<cr>
-map <leader>h :set nohlsearch<cr>
+map <leader>nh :set nohlsearch<cr>
+map <leader>h :set hlsearch<cr>
 
 nnoremap <cr> o<Esc>
 
