@@ -12,6 +12,8 @@ set clipboard=unnamedplus
 
 filetype off
 
+let mapleader = ","
+
 set nocompatible
 
 set number
@@ -57,8 +59,10 @@ if &t_Co > 2 || has("gui_running")
 endif
 nnoremap <space> za
 
-nnoremap <C-S-Right> :bn<cr>
-nnoremap <C-S-Left> :bp<cr>
+map <leader>k :bn<cr>
+map <leader>j :bp<cr>
+map <leader>d :bd<cr>
+map <leader>h :set nohlsearch<cr>
 
 nnoremap <cr> o<Esc>
 
