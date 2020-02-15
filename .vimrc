@@ -57,8 +57,8 @@ if &t_Co > 2 || has("gui_running")
 endif
 nnoremap <space> za
 
-nnoremap <C-S-L> :bn<cr>
-nnoremap <C-S-K> :bp<cr>
+nnoremap <C-S-Right> :bn<cr>
+nnoremap <C-S-Left> :bp<cr>
 
 nnoremap <cr> o<Esc>
 
