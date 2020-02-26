@@ -4,6 +4,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-scripts/c.vim'
 call plug#end()
 
 filetype plugin indent on
