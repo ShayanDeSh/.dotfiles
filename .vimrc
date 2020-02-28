@@ -5,6 +5,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-scripts/c.vim'
+Plug '907th/vim-auto-save'
 call plug#end()
 
 filetype plugin indent on
