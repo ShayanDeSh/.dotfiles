@@ -63,7 +63,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 nnoremap <space> za
 
-map <leader>n :bn<cr>
+map <leader>nn :bn<cr>
 map <leader>p :bp<cr>
 map <leader>bd :bd<cr>
 map <leader>nh :set nohlsearch<cr>
