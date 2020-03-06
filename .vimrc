@@ -6,6 +6,9 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-scripts/c.vim'
 Plug '907th/vim-auto-save'
+Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 call plug#end()
 
 filetype plugin indent on
@@ -87,8 +90,10 @@ vnoremap <S-tab> <gv
 colorscheme space-vim-dark
 let g:space_vim_dark_background = 233
 color space-vim-dark
-hi LineNr ctermbg=NONE guibg=NONE
-hi Comment guifg=#5C6370 ctermfg=59
+hi LineNr ctermbg=NONE
+hi Comment ctermfg=59
+
+autocmd BufReadPost * exe ":UpdateTags"
 
 let g:airline#extensions#tabline#enabled = 1 
 let g:airline_powerline_fonts = 1
