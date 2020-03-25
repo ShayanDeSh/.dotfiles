@@ -17,6 +17,7 @@ Plug '907th/vim-auto-save'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+Plug 'yggdroot/indentline'
 call plug#end()
 
 filetype plugin indent on
