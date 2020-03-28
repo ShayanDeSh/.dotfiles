@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
+Plug 'sudar/vim-arduino-syntax'
 call plug#end()
 
 filetype plugin indent on
@@ -108,6 +109,7 @@ color space-vim-dark
 hi LineNr ctermbg=NONE
 hi Comment ctermfg=59
 
+au BufRead,BufNewFile *.ino,*.pde set filetype=cpp
 autocmd BufReadPost * exe ":UpdateTags"
 
 let g:airline#extensions#tabline#enabled = 1 
