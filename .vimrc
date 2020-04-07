@@ -19,6 +19,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
 Plug 'sudar/vim-arduino-syntax'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 filetype plugin indent on
