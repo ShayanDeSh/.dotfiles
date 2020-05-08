@@ -20,6 +20,7 @@ Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
 filetype plugin indent on
@@ -103,6 +104,10 @@ vnoremap <Tab> >gv
 vnoremap <S-tab> <gv
 
 " colorscheme Tomorrow-Night 
+"
+
+set completeopt-=preview
+
 
 colorscheme space-vim-dark
 let g:space_vim_dark_background = 233
@@ -118,3 +123,4 @@ let g:airline_powerline_fonts = 1
 " for darker airline uncomment the bottom line
 " let g:airline_theme='minimalist' 
 let g:SimpylFold_docstring_preview=1
+" let g:ycm_show_diagnostics_ui = 0
