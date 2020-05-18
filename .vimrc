@@ -53,8 +53,6 @@ set encoding=utf-8
 " get rid of swap files
 set noswapfile
 " please do not use more than 79 char in line when you are coding
-set textwidth=80
-set wrap
 set autoread
 " shows the command you entered
 set showcmd
