@@ -8,8 +8,6 @@
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-scripts/c.vim'
@@ -105,7 +103,9 @@ vnoremap <S-tab> <gv
 "
 
 set completeopt-=preview
-
+" Some shorcut for YCM
+nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 
 colorscheme space-vim-dark
 let g:space_vim_dark_background = 233
@@ -116,7 +116,7 @@ hi Comment ctermfg=59
 au BufRead,BufNewFile *.ino,*.pde set filetype=cpp
 autocmd BufReadPost * exe ":UpdateTags"
 
-let g:airline#extensions#tabline#enabled = 1 
+" let g:airline#extensions#tabline#enabled = 1 
 let g:airline_powerline_fonts = 1
 " for darker airline uncomment the bottom line
 " let g:airline_theme='minimalist' 
