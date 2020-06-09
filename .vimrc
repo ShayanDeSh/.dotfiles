@@ -17,8 +17,9 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
 Plug 'sudar/vim-arduino-syntax'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe' " execute rustup component add rls rust-analysis rust-src for rust support
 Plug 'whatyouhide/vim-gotham'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 filetype plugin indent on
