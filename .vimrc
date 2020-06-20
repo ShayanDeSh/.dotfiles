@@ -17,7 +17,8 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
 Plug 'sudar/vim-arduino-syntax'
-Plug 'ycm-core/YouCompleteMe' " execute rustup component add rls rust-analysis rust-src for rust support
+" For completely activating ycm see it's repo on github
+Plug 'ycm-core/YouCompleteMe' " execute 'rustup component add rls rust-analysis rust-src' for rust support
 Plug 'whatyouhide/vim-gotham'
 Plug 'rust-lang/rust.vim'
 call plug#end()
@@ -114,10 +115,11 @@ color space-vim-dark
 hi LineNr ctermbg=NONE
 hi Comment ctermfg=59
 
+" Open .ino files as cpp
 au BufRead,BufNewFile *.ino,*.pde set filetype=cpp
 autocmd BufReadPost * exe ":UpdateTags"
 
-" let g:airline#extensions#tabline#enabled = 1 
+let g:airline#extensions#tabline#enabled = 1 
 let g:airline_powerline_fonts = 1
 " for darker airline uncomment the bottom line
 " let g:airline_theme='minimalist' 
