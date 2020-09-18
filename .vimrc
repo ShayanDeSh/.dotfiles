@@ -18,9 +18,10 @@ Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
 Plug 'sudar/vim-arduino-syntax'
 " For completely activating ycm see it's repo on github
-Plug 'ycm-core/YouCompleteMe' " execute 'rustup component add rls rust-analysis rust-src' for rust support
+" Plug 'ycm-core/YouCompleteMe' " execute 'rustup component add rls rust-analysis rust-src' for rust support
 Plug 'whatyouhide/vim-gotham'
 Plug 'rust-lang/rust.vim'
+Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 
 filetype plugin indent on
@@ -117,11 +118,19 @@ hi Comment ctermfg=59
 
 " Open .ino files as cpp
 au BufRead,BufNewFile *.ino,*.pde set filetype=cpp
-autocmd BufReadPost * exe ":UpdateTags"
+autocmd Filetype python,c,rust,go exe ":UpdateTags"
 
-let g:airline#extensions#tabline#enabled = 1 
+let g:airline#extensions#tabline#enabled = 0 
 let g:airline_powerline_fonts = 1
 " for darker airline uncomment the bottom line
 " let g:airline_theme='minimalist' 
 let g:SimpylFold_docstring_preview=1
 " let g:ycm_show_diagnostics_ui = 0
+
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
