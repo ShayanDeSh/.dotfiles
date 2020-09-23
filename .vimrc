@@ -22,6 +22,7 @@ Plug 'sudar/vim-arduino-syntax'
 Plug 'whatyouhide/vim-gotham'
 Plug 'rust-lang/rust.vim'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 filetype plugin indent on
@@ -110,9 +111,13 @@ set completeopt-=preview
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 
-colorscheme space-vim-dark
-let g:space_vim_dark_background = 233
-color space-vim-dark
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+set bg=dark
+
+" colorscheme space-vim-dark
+" let g:space_vim_dark_background = 233
+" color space-vim-dark
 hi LineNr ctermbg=NONE
 hi Comment ctermfg=59
 
