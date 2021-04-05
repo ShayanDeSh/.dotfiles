@@ -60,9 +60,28 @@ set autoread
 set showcmd
 
 set expandtab
-set tabstop=8
-set shiftwidth=8
-set softtabstop=8
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+au BufNewFile,BufRead *.py  
+    \ setlocal tabstop=4 |
+    \ setlocal softtabstop=4 |
+    \ setlocal shiftwidth=4 |
+    \ setlocal textwidth=79 |
+    \ setlocal expandtab |
+    \ setlocal autoindent |
+    \ setlocal fileformat=unix
+
+set cindent
+au BufRead,BufNewFile *.c,*.h
+    \ setlocal tabstop=8 |
+    \ setlocal softtabstop=8 |
+    \ setlocal shiftwidth=8 |
+    \ setlocal textwidth=79 |
+    \ setlocal autoindent |
+    \ setlocal expandtab |
+    \ setlocal fileformat=unix
 
 set foldmethod=indent
 set foldlevel=79
