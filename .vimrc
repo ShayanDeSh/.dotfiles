@@ -60,9 +60,9 @@ set autoread
 set showcmd
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
 
 set foldmethod=indent
 set foldlevel=79
@@ -108,16 +108,14 @@ vnoremap <S-tab> <gv
 
 set completeopt-=preview
 " Some shorcut for YCM
-nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+" nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+" nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+let python_highlight_all=1
 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-set bg=dark
 
-" colorscheme space-vim-dark
-" let g:space_vim_dark_background = 233
-" color space-vim-dark
+colorscheme space-vim-dark
+let g:space_vim_dark_background = 233
+color space-vim-dark
 hi LineNr ctermbg=NONE
 hi Comment ctermfg=59
 
@@ -139,3 +137,4 @@ let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+set termbidi
