@@ -9,7 +9,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-scripts/c.vim'
 Plug '907th/vim-auto-save'
 Plug 'majutsushi/tagbar'
@@ -75,9 +74,9 @@ au BufNewFile,BufRead *.py
 
 set cindent
 au BufRead,BufNewFile *.c,*.h
-    \ setlocal tabstop=8 |
-    \ setlocal softtabstop=8 |
-    \ setlocal shiftwidth=8 |
+    \ setlocal tabstop=4 |
+    \ setlocal softtabstop=4 |
+    \ setlocal shiftwidth=4 |
     \ setlocal textwidth=79 |
     \ setlocal autoindent |
     \ setlocal expandtab |
@@ -99,7 +98,7 @@ map <leader>p :bp<cr>
 " In normal mode use ,bd to delete buffer
 map <leader>bd :bd<cr>
 " In normal mode use ,nh to hide search highlighting 
-map <leader>nh :set nohlsearch<cr>
+map <leader>nh :noh<cr>
 " In normal mode use ,h to show search highlighting 
 map <leader>h :set hlsearch<cr>
 " In normal mode use ,d to go to delete line
