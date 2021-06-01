@@ -16,12 +16,14 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'yggdroot/indentline'
 Plug 'sudar/vim-arduino-syntax'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " For completely activating ycm see it's repo on github
 " Plug 'ycm-core/YouCompleteMe' " execute 'rustup component add rls rust-analysis rust-src' for rust support
 Plug 'whatyouhide/vim-gotham'
 Plug 'rust-lang/rust.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'morhetz/gruvbox'
+Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 filetype plugin indent on
@@ -156,3 +158,30 @@ let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 set termbidi
+
+" coc
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
