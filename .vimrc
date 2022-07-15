@@ -24,6 +24,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
+Plug 'willchao612/vim-diagon'
 call plug#end()
 
 filetype plugin indent on
@@ -74,6 +75,15 @@ au BufNewFile,BufRead *.py
     \ setlocal autoindent |
     \ setlocal fileformat=unix
 
+au BufNewFile,BufRead *.yaml,*.yml
+    \ setlocal tabstop=2 |
+    \ setlocal softtabstop=2 |
+    \ setlocal shiftwidth=2 |
+    \ setlocal textwidth=79 |
+    \ setlocal expandtab |
+    \ setlocal autoindent |
+    \ setlocal fileformat=unix
+
 set cindent
 au BufRead,BufNewFile *.c,*.h
     \ setlocal tabstop=4 |
@@ -109,11 +119,10 @@ map <leader>d "_dd
 " In normal mode use enter to add new line without gooing to insert mode
 nnoremap <cr> o<Esc>
 
-" Moving around panes
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Moving around float buffer window
+nnoremap <silent><nowait><expr> <C-J> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-F>"
+nnoremap <silent><nowait><expr> <C-K> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-B>"
+nnoremap <C-H> <C-W><C-W>
 
 " In normal mode you can use tab to indent line
 nnoremap <Tab> >>_
