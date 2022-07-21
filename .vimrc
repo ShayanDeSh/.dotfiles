@@ -103,10 +103,26 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch
 endif
 nnoremap <space> za
+
+" list buffers
+map <leader>bl :buffers<cr>
+
+" goto buffer
+map <leader>bg :call <SID>gotobuffer()<cr>
+function! s:gotobuffer()
+    execute ":buffers"
+    try
+        execute ":buffer ". input('buffer number: ')
+    catch /.*/
+        redraw
+        echo "Buffer doesn't exsists"
+    endtry
+endfunction
+
 " In normal mode use ,nn to go to next buffer
-map <leader>nn :bn<cr>
+map <leader>bn :bn<cr>
 " In normal mode use ,p to go to previous buffer
-map <leader>p :bp<cr>
+map <leader>bp :bp<cr>
 " In normal mode use ,bd to delete buffer
 map <leader>bd :bd<cr>
 " In normal mode use ,nh to hide search highlighting 
