@@ -79,7 +79,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
     vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, bufopts)
-    vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
     require "lsp_signature".on_attach({
         doc_lines = 0,
         handler_opts = {
@@ -192,6 +192,20 @@ require("telescope").setup {
         }
     }
 }
+
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the four listed parsers should always be installed)
+  ensure_installed = { "c", "lua", "vim", "help", "rust", "python", "cpp" },
+  sync_install = false,
+  auto_install = true,
+  ignore_install = { },
+  highlight = {
+    enable = true,
+    disable = { },
+    additional_vim_regex_highlighting = false,
+  },
+}
+
 
 return {
     is_first_in_col = is_first_in_col,

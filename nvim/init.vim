@@ -28,6 +28,8 @@ Plug 'willchao612/vim-diagon'
 Plug 'rhysd/vim-clang-format'
 Plug 'puremourning/vimspector'
 " Plug 'lervag/vimtex'
+"
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -198,35 +200,34 @@ nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-tab> <gv
 
-" colorscheme Tomorrow-Night 
-"
-
 " Some shorcut for YCM
 " nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 " nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-let python_highlight_all=1
-
+"let python_highlight_all=1
+"
 if exists('$BASE16_THEME')
       \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
     let base16colorspace=256
     colorscheme base16-$BASE16_THEME
 endif
 
-colorscheme base16-classic-dark
-color base16-classic-dark
-hi LineNr ctermbg=NONE
-hi Comment ctermfg=59
-
+"colorscheme base16-classic-dark
+"color base16-classic-dark
+"
 "colorscheme space-vim-dark
 "let g:space_vim_dark_background = 233
 "color space-vim-dark
+
+hi LineNr ctermbg=NONE
+hi Comment ctermfg=59
+
 
 " Open .ino files as cpp
 au BufRead,BufNewFile *.ino,*.pde set filetype=cpp
 
 let g:airline#extensions#tabline#enabled = 1 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_classic_dark'
+"let g:airline_theme='base16_classic_dark'
 
 let g:SimpylFold_docstring_preview=1
 " let g:ycm_show_diagnostics_ui = 0
