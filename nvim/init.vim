@@ -25,8 +25,9 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
 Plug 'willchao612/vim-diagon'
-Plug 'rhysd/vim-clang-format'
 Plug 'puremourning/vimspector'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'zbirenbaum/copilot.lua'
 " Plug 'lervag/vimtex'
 "
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -67,7 +68,7 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-inoremap <C-e> <nop>
+inoremap <C-c> <nop>
 
 " Left and right can switch buffers
 nnoremap <up> :bn<CR>
@@ -106,7 +107,6 @@ set splitright
 set encoding=utf-8
 " get rid of swap files
 set noswapfile
-" please do not use more than 79 char in line when you are coding
 set autoread
 " shows the command you entered
 set showcmd
@@ -122,7 +122,6 @@ au BufNewFile,BufRead *.py
     \ setlocal tabstop=4 |
     \ setlocal softtabstop=4 |
     \ setlocal shiftwidth=4 |
-    \ setlocal textwidth=79 |
     \ setlocal expandtab |
     \ setlocal autoindent |
     \ setlocal fileformat=unix
@@ -131,7 +130,6 @@ au BufNewFile,BufRead *.yaml,*.yml
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2 |
     \ setlocal shiftwidth=2 |
-    \ setlocal textwidth=79 |
     \ setlocal expandtab |
     \ setlocal autoindent |
     \ setlocal fileformat=unix
@@ -141,13 +139,10 @@ au BufRead,BufNewFile *.c,*.h
     \ setlocal tabstop=4 |
     \ setlocal softtabstop=4 |
     \ setlocal shiftwidth=4 |
-    \ setlocal textwidth=79 |
     \ setlocal autoindent |
     \ setlocal expandtab |
     \ setlocal fileformat=unix
 
-set foldmethod=indent
-set foldlevel=79
 set cursorline
 
 if &t_Co > 2 || has("gui_running")
@@ -290,6 +285,8 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+"markdown-preview
+let g:mkdp_refresh_slow = 1
 
 lua <<EOF
     require("config")

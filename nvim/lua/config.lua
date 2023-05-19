@@ -5,7 +5,6 @@ vim.keymap.set('n', '<C-left>', resize.left_resize)
 vim.keymap.set('n', '<C-up>', resize.up_resize)
 vim.keymap.set('n', '<C-down>', resize.down_resize)
 
-
 -- Set up nvim-cmp.
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -26,9 +25,9 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), 
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(), 
     ['<Tab>'] = cmp.mapping.select_next_item(),
-  }),
+    }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
@@ -51,16 +50,6 @@ cmp.setup.cmdline({ '/', '?' }, {
   }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
 -- Set up lspconfig.
 
 local on_attach = function(client, bufnr)
@@ -80,6 +69,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
     vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, bufopts)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+--    vim.keymap.set('i', '<C-c>', 'copilot#Accept("<CR>")', {expr=true, silent=true, replace_keycodes=false})
+
     require "lsp_signature".on_attach({
         doc_lines = 0,
         handler_opts = {
@@ -115,8 +106,18 @@ lspconfig.pyright.setup {
   flags = {
     debounce_text_changes = 150,
   },
-  capabilities = capabilities
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        typeCheckingMode = "off",
+      },
+    },
+  },
 }
+
 
 lspconfig["ltex"].setup {
   on_attach = on_attach,
@@ -133,6 +134,7 @@ lspconfig.texlab.setup {
   },
   settings = {
       texlab = {
+          rootDirectory = os.getenv("TEX_ROOT"),
           build = {
               onSave = true
           },
@@ -140,6 +142,30 @@ lspconfig.texlab.setup {
               onEdit = true
           }
       }
+  },
+  capabilities = capabilities
+}
+
+lspconfig.clangd.setup{
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=bundled",
+    "--cross-file-rename",
+    "--header-insertion=iwyu",
+  },
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  capabilities = capabilities
+}
+
+lspconfig.terraformls.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
   },
   capabilities = capabilities
 }
@@ -171,7 +197,10 @@ sign({name = 'DiagnosticSignInfo', text = ':o'})
 null_ls = require("null-ls")
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.black
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.diagnostics.mypy.with({
+        extra_args = {"--ignore-missing-imports"}
+    })
   },
 })
 
@@ -201,10 +230,54 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { },
   highlight = {
     enable = true,
-    disable = { },
+    disable = { "markdown" },
     additional_vim_regex_highlighting = false,
   },
 }
+
+require('copilot').setup({
+  panel = {
+    enabled = true,
+    auto_refresh = false,
+    keymap = {
+      jump_prev = "[[",
+      jump_next = "]]",
+      accept = "<CR>",
+      refresh = "gr",
+      open = "<M-CR>"
+    },
+    layout = {
+      position = "bottom", -- | top | left | right
+      ratio = 0.4
+    },
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = false,
+    debounce = 75,
+    keymap = {
+      accept = "<C-c>",
+      accept_word = false,
+      accept_line = false,
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<C-]>",
+    },
+  },
+  filetypes = {
+    yaml = false,
+    markdown = false,
+    help = false,
+    gitcommit = false,
+    gitrebase = false,
+    hgcommit = false,
+    svn = false,
+    cvs = false,
+    ["."] = false,
+  },
+  copilot_node_command = 'node', -- Node.js version must be > 16.x
+  server_opts_overrides = {},
+})
 
 
 return {
