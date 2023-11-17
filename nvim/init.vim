@@ -22,11 +22,11 @@ Plug 'justinmk/vim-sneak'
 Plug 'whatyouhide/vim-gotham'
 Plug 'rust-lang/rust.vim'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'morhetz/gruvbox'
 Plug 'tikhomirov/vim-glsl'
 Plug 'willchao612/vim-diagon'
 Plug 'puremourning/vimspector'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'zbirenbaum/copilot.lua'
 " Plug 'lervag/vimtex'
 "
@@ -287,6 +287,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 "markdown-preview
 let g:mkdp_refresh_slow = 1
+let g:mkdp_theme = 'light'
 
 lua <<EOF
     require("config")
