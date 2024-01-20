@@ -1,0 +1,123 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": ", f f",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "editorFocus && neovim.mode == normal"
+    },
+    {
+        "key": ", s",
+        "command": "workbench.action.findInFiles",
+        "when": "editorFocus && neovim.mode == normal"
+    },
+    {
+        "key": ", t",
+        "command": "terminal.focus",
+        "when": "editorFocus && neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.togglePanel",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.toggleActivityBarVisibility",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "ctrl+right",
+        "command": "workbench.action.increaseViewWidth",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "ctrl+left",
+        "command": "workbench.action.decreaseViewWidth",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.increaseViewHeight",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.decreaseViewHeight",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "alt+=",
+        "command": "workbench.action.increaseViewSize",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "alt+-",
+        "command": "workbench.action.decreaseViewSize",
+        "when": "neovim.mode == normal "
+    },
+    {
+        "key": "space f",
+        "command": "editor.action.formatDocument",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "right",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "left",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "workbench.action.splitEditorDown",
+        "when": "neovim.mode == normal && editorFocus"
+    }
+]
