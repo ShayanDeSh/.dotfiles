@@ -71,6 +71,11 @@
         "when": "neovim.mode == normal "
     },
     {
+        "key": "ctrl+shift+c",
+        "command": "workbench.panel.chat.view.copilot.focus",
+        "when": "neovim.mode == normal "
+    },
+    {
         "key": "ctrl+right",
         "command": "workbench.action.increaseViewWidth",
         "when": "neovim.mode == normal "
@@ -119,5 +124,35 @@
         "key": "ctrl+-",
         "command": "workbench.action.splitEditorDown",
         "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.moveActiveEditorGroupRight",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.moveActiveEditorGroupLeft",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.moveActiveEditorGroupUp",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.moveActiveEditorGroupDown",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.moveEditorToNewWindow",
+        "when": "neovim.mode == normal && editorFocus"
+    },
+    {
+        "key": ", e",
+        "command": "github.copilot.interactiveEditor.explain",
+        "when": "neovim.mode == visual && editorFocus"
     }
 ]
