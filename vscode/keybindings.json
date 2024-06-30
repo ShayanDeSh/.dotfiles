@@ -3,7 +3,8 @@
     {
         "key": "ctrl+l",
         "command": "workbench.action.navigateRight",
-        "when": "neovim.mode == normal"
+        "when": "neovim.mode == normal && !terminalFocus"
+    }
     },
     {
         "key": "ctrl+h",
@@ -22,16 +23,16 @@
     },
     {
         "key": ", f f",
-        "command": "workbench.files.action.focusFilesExplorer",
+        "command": "workbench.view.explorer",
         "when": "editorFocus && neovim.mode == normal"
     },
     {
-        "key": ", s",
+        "key": ", f g",
         "command": "workbench.action.findInFiles",
         "when": "editorFocus && neovim.mode == normal"
     },
     {
-        "key": ", t",
+        "key": ", f t",
         "command": "terminal.focus",
         "when": "editorFocus && neovim.mode == normal"
     },
@@ -71,7 +72,7 @@
         "when": "neovim.mode == normal "
     },
     {
-        "key": "ctrl+shift+c",
+        "key": ", f c",
         "command": "workbench.panel.chat.view.copilot.focus",
         "when": "neovim.mode == normal "
     },
@@ -154,5 +155,13 @@
         "key": ", e",
         "command": "github.copilot.interactiveEditor.explain",
         "when": "neovim.mode == visual && editorFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
     }
 ]
