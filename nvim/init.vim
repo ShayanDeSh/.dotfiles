@@ -200,21 +200,19 @@ vnoremap <S-tab> <gv
 " nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 "let python_highlight_all=1
 "
-if exists('$BASE16_THEME')
-      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-    let base16colorspace=256
-    colorscheme base16-$BASE16_THEME
-endif
+"if exists('$BASE16_THEME')
+"      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+"    let base16colorspace=256
+"    colorscheme base16-$BASE16_THEME
+"endif
 
-"colorscheme base16-classic-dark
+" colorscheme base16-classic-dark
 "color base16-classic-dark
 "
-"colorscheme space-vim-dark
-"let g:space_vim_dark_background = 233
-"color space-vim-dark
 
-hi LineNr ctermbg=NONE
-hi Comment ctermfg=59
+
+" hi LineNr ctermbg=NONE
+" hi Comment ctermfg=59
 
 
 " Open .ino files as cpp
@@ -284,6 +282,8 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+nno <leader>fd <cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>
 
 "markdown-preview
 let g:mkdp_refresh_slow = 1
@@ -294,4 +294,5 @@ lua <<EOF
 EOF
 
 
+colorscheme catppuccin-mocha
 

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/nal/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/nal/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/nal/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/nal/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/nal/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/shayandesh/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/shayandesh/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/shayandesh/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/shayandesh/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/shayandesh/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,30 +74,50 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  catppuccin = {
+    loaded = true,
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["iron.nvim"] = {
     loaded = true,
-    path = "/home/nal/.local/share/nvim/site/pack/packer/start/iron.nvim",
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/iron.nvim",
     url = "https://github.com/Vigemus/iron.nvim"
   },
   ["nvim-dap"] = {
     loaded = true,
-    path = "/home/nal/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/nal/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/nal/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/home/nal/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/shayandesh/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   }
 }
 
